@@ -1,5 +1,3 @@
-/* GAME FUNCTIONS */
-
 // function to generate a random numeric value
 var randomNumber = function(min, max) {
   var value = Math.floor(Math.random() * (max - min + 1) + min);
@@ -170,7 +168,16 @@ var shop = function() {
 /* GAME INFORMATION / VARIABLES */
 
 // player information
+var getPlayerName = function() {
+  var name = "";
+  while (name === "" || name === null) {
+    name = prompt("What is your robot's name?");
+  }
+  console.log("Your robot's name is " + name);
+  return name;
+};
 var playerInfo = {
+  name: getPlayerName(),
   name: window.prompt("What is your robot's name?"),
   health: 100,
   attack: 10,
